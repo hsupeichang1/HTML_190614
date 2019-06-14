@@ -21,14 +21,67 @@
 
     <script>
         // 1.先讓圖片可以移動
+        // $(function(){
+        //     $("#startMove").click(function(){
+        //         $("img").css("position","relative");
+        //         $("img").css("top","200px");
+        //     });
+        // });
+
 
         // 2.讓圖片移動的數值不固定
+        // $(function(){
+        //     $("#startMove").click(function(){
+        //         $("img").css("position","relative");
+        //         $("img").css("top",(Math.random()*300) + "px");
+        //     });
+        // });
 
         // 3.讓圖片有自己的亂數設定 .each()
+        // $(function(){
+        //     $("#startMove").click(function(){
+        //         $("img").css("position","relative");
+        //         $("img").each(function(){
+        //             $(this).css("top",(Math.random()*300) + "px"); //每張分別改變
+        //         });
+        //     });
+        // });
 
         // 4.讓圖片有滑動的效果
+        // $(function(){
+        //     $("#startMove").click(function(){
+        //         $("img").css("position","relative");
+                
+        //         $("img").each(function(){
+        //             //$(this).css("top",(Math.random()*300) + "px"); //每張分別改變
+        //             $(this).animate({
+        //                 top:(Math.random()*300) + "px",
+        //                 left:(Math.random()*300) + "px",
+        //             },800);
+        //         });
+        //     });
+        // });
 
-        // 5.讓圖片自己動起來吧
+        // 5.讓圖片自己動起來吧 
+        $(function(){
+            $("#startMove").click(function(){
+                $("img").css("position","relative");
+
+                //每一秒鐘跑一次
+                setInterval(move,1000);
+ 
+            });
+
+            function move(){
+                $("img").each(function(){
+                    //$(this).css("top",(Math.random()*300) + "px"); //每張分別改變
+                    $(this).animate({
+                        top:(Math.random()*300) + "px",
+                        left:(Math.random()*300) + "px",
+                    },800);
+                });
+            };
+        });
     </script>
 </body>
 
